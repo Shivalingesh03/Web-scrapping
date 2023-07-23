@@ -1,0 +1,144 @@
+<!-- <!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scrapped Job</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+    
+    <link href="https://fluentdesignforweb.github.io/" type="text/css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Result for job search</div><br>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Title</th>
+         <th>Company</th>
+         <th>Experience</th>
+         <th>CTC</th>
+         <th width="230">skills</th>
+         <th>Posted on</th>
+         <th>More details</th>
+      </tr>
+      {% for job in techgig_list %}
+      <tr>
+          <td>{{job['title']}}</td>
+          <td>{{job['company']}}</td>
+          <td>{{job['experience']}}</td>
+          <td>{{job['ctc']}}</td>
+          <td>{{job['skills']}} </td>
+          <td>{{job['posted']}}</td>
+          <td>{{job['details']}}</td>
+      </tr>
+      {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scrapped Job</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F5F5F5;
+    }
+    
+    .table-users {
+      margin: 50px auto;
+      width: 80%;
+      border-collapse: collapse;
+      background-color: #FFFFFF;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-users .header {
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px;
+      color: #333333;
+    }
+    
+    .table-users table {
+      width: 100%;
+    }
+    
+    .table-users th,
+    .table-users td {
+      padding: 12px 15px;
+      text-align: left;
+    }
+    
+    .table-users th {
+      background-color: #EEEEEE;
+      color: #333333;
+      font-weight: bold;
+    }
+    
+    .table-users tr:nth-child(even) {
+      background-color: #F2F2F2;
+    }
+    
+    .table-users tr:hover {
+      background-color: #DDDDDD;
+    }
+    
+    .table-users td a {
+      text-decoration: none;
+      color: #0066CC;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="table-users">
+    <div class="header">Result for job search</div><br>
+
+    <table cellspacing="0">
+      <tr>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Experience</th>
+        <th>CTC</th>
+        <th width="230">Skills</th>
+        <th>Posted on</th>
+        <th>More details</th>
+        <th>Application Link</th>
+      </tr>
+      {% for job in techgig_list %}
+      <tr>
+        <td>{{job['title']}}</td>
+        <td>{{job['company']}}</td>
+        <td>{{job['experience']}}</td>
+        <td>{{job['ctc']}}</td>
+        <td>{{job['skills']}}</td>
+        <td>{{job['posted']}}</td>
+        <td>{{job['details']}}</td>
+        <td><a href="{{job['details']}}" ><input type="button" value="Apply"></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>
